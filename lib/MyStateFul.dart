@@ -15,20 +15,24 @@ class _BiggerTextState extends State<MyStateFul> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text(widget.text, style: TextStyle(fontSize: _textSize, color: Colors.white),),
-        SizedBox(height: 10,),
-        ElevatedButton(
-          child: const Text('Click Me!'),
-          onPressed: () {
-            setState(() {
-              _textSize = (_textSize == 16.0) ? 32.0 : 16.0;
-            });
-          },
-        )
-      ],
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(widget.text, style: TextStyle(fontSize: _textSize, color: Colors.black),),
+            SizedBox(height: 10,),
+            ElevatedButton(
+              child: const Text('Click Me!'),
+              onPressed: () {
+                setState(() {
+                  _textSize = (_textSize == 16.0) ? 32.0 : 16.0;
+                });
+              },
+            )
+          ],
+        ),
+      ),
     );
   }
 }
